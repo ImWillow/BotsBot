@@ -21,7 +21,7 @@ func AddMe(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	splittedContent := strings.Split(m.Content, "/")
 
-	message.Username = tools.DeletePrefix(splittedContent[0], configuration.Prefix+"Addme")
+	message.Username = tools.DeletePrefix(splittedContent[0], configuration.Prefix+"addme ")
 	err := s.GuildMemberNickname(configuration.ServerID, m.Author.ID, message.Username)
 	if err != nil {
 		log.Debug("Send message error: ", err)
