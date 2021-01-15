@@ -23,10 +23,12 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	switch command := m.Content; command {
 	case configuration.Prefix + "I?":
 		commands.WhoIAm(s, m)
-	case configuration.Prefix + "Addme" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"Addme"):
+	case configuration.Prefix + "addme" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"addme"):
 		commands.AddMe(s, m)
-	case configuration.Prefix + "GameList":
+	case configuration.Prefix + "gameList":
 		commands.GamesList(s, m)
+	case configuration.Prefix + "clear" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"clear"):
+		commands.Clear(s, m)
 	}
 
 }
