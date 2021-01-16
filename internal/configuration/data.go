@@ -3,6 +3,9 @@ package configuration
 const (
 	// GamesList - list with games on discord server
 	GamesList = "LostArk,LeagueOfLegends,Valorant,Dota2,Warframe,Terraria"
+
+	// AdminList - list with all administration IDs
+	AdminList = "264355075944611840,501043582656839682,221621445971804160,288022850093318146,215819877116674048"
 )
 
 // NewUserMessage - structure of new user messages

@@ -2,10 +2,10 @@ package configuration
 
 const (
 	// Token - token for discord bot
-	Token = "Place_Your_Token_Here"
+	Token = "NzEyMDUyMjk4NDczMjc1NDMz.XsL8YQ.RtyPXWTWcrwXo2Rmktw6MlZfL7k"
 
 	// ServerID - discord server ID
-	ServerID = "Place_YourServer_ID_Here"
+	ServerID = "355652238611578890"
 
 	// LoggingLevel - level of logs
 	LoggingLevel = "TRACE"

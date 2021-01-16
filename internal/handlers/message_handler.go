@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
+	log "github.com/sirupsen/logrus"
 )
 
 // MessageHandler - handler for catch messages
@@ -28,7 +29,11 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	case configuration.Prefix + "gameList":
 		commands.GamesList(s, m)
 	case configuration.Prefix + "clear" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"clear"):
-		commands.Clear(s, m)
+		if strings.Contains(configuration.AdminList, m.Author.ID) {
+			commands.Clear(s, m)
+		} else {
+			log.Debug("У чела недостаточно прав")
+		}
 	}
 
 }
