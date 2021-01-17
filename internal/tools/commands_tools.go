@@ -4,6 +4,7 @@ import (
 	"BotsBot/internal/configuration"
 	"strings"
 
+	"github.com/bwmarrin/discordgo"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -57,4 +58,19 @@ func GetRoles(gamelist string) (roles []string) {
 	roles = append(roles, configuration.ServerRoles.ServerPlayers)
 
 	return
+}
+
+// SendToUser - tool for send message to user
+func SendToUser(s *discordgo.Session, m *discordgo.MessageCreate, content string) {
+	userChannel, err := s.UserChannelCreate(m.Author.ID)
+	if err != nil {
+		log.Debug("Send message error: ", err)
+	}
+
+	log.Debug("User Channels: ", userChannel)
+
+	_, err = s.ChannelMessageSend(userChannel.ID, content)
+	if err != nil {
+		log.Debug("Send message error: ", err)
+	}
 }

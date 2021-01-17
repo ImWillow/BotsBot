@@ -53,15 +53,5 @@ func AddMe(s *discordgo.Session, m *discordgo.MessageCreate) {
 // GamesList - command for send games list to user
 func GamesList(s *discordgo.Session, m *discordgo.MessageCreate) {
 	content := "List of games: " + configuration.GamesList
-	userChannel, err := s.UserChannelCreate(m.Author.ID)
-	if err != nil {
-		log.Debug("Send message error: ", err)
-	}
-
-	log.Debug("User Channels: ", userChannel)
-
-	_, err = s.ChannelMessageSend(userChannel.ID, content)
-	if err != nil {
-		log.Debug("Send message error: ", err)
-	}
+	tools.SendToUser(s, m, content)
 }
