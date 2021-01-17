@@ -23,6 +23,7 @@ func InitRoles() (roles Roles) {
 // InitTextChannels - function for init text channels
 // TODO: Доделать текстовые каналы.
 func InitTextChannels() (textChannels TextChannels) {
+	textChannels.ModeratorLog = "379664015472852993"
 	return
 }
 

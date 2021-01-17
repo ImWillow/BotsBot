@@ -17,7 +17,7 @@ func Clear(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	messages, err := s.ChannelMessages(m.ChannelID, messageCount, "", "", "")
+	messages, err := s.ChannelMessages(m.ChannelID, messageCount+1, "", "", "")
 	if err != nil {
 		log.Error("Send message error: ", err)
 		return

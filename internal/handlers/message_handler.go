@@ -24,7 +24,11 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	case configuration.Prefix + "I?":
 		commands.WhoIAm(s, m)
 	case configuration.Prefix + "addme" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"addme"):
-		commands.AddMe(s, m)
+		if !tools.CheckPlayerRole(m.Member.Roles) {
+			commands.AddMe(s, m)
+		} else {
+			tools.SendToUser(s, m, "Ты  уже добавлен как игрок сервера! Радуйся!")
+		}
 	case configuration.Prefix + "gameList":
 		commands.GamesList(s, m)
 	case configuration.Prefix + "clear" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"clear"):

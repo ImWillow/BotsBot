@@ -43,6 +43,7 @@ type Roles struct {
 // TextChannels - structure of server text channels
 // TODO: Доделать текстовые каналы.
 type TextChannels struct {
+	ModeratorLog string
 }
 
 // VoiceChannels - structure of server voice channels
