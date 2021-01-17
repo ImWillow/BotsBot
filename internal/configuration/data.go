@@ -11,7 +11,7 @@ const (
 	UserCommandsList = "User commands: ?addme, ?gameList."
 
 	// AdminCommandsList - list with commands for users with admin roles
-	AdminCommandsList = "Admin commands: ?clear."
+	AdminCommandsList = "Admin commands: ?clear, ?send."
 )
 
 // NewUserMessage - structure of new user messages
@@ -44,6 +44,7 @@ type Roles struct {
 // TODO: Доделать текстовые каналы.
 type TextChannels struct {
 	ModeratorLog string
+	Bids         string
 }
 
 // VoiceChannels - structure of server voice channels

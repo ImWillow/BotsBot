@@ -42,7 +42,7 @@ func AddMe(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	content := "Пользователь " + m.Author.Username + " одобрен!"
-	_, err = s.ChannelMessageSend("638470434685452328", content)
+	_, err = s.ChannelMessageSend(configuration.ServerTextChannels.Bids, content)
 	if err != nil {
 		log.Debug("Send message error: ", err)
 	}
