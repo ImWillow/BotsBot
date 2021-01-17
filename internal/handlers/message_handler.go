@@ -29,7 +29,7 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	case configuration.Prefix + "gameList":
 		commands.GamesList(s, m)
 	case configuration.Prefix + "clear" + tools.DeletePrefix(m.Message.Content, configuration.Prefix+"clear"):
-		if strings.Contains(configuration.AdminList, m.Author.ID) {
+		if tools.AdminCheck(m.Author.ID) {
 			commands.Clear(s, m)
 		} else {
 			log.Debug("У чела недостаточно прав")
