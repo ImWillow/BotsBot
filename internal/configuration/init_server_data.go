@@ -11,6 +11,7 @@ func InitRoles() (roles Roles) {
 	roles.LostArk = "789812703543164958"
 	roles.LeagueOfLegends = "638472018773147709"
 	roles.Valorant = "737228757504491521"
+	roles.WoWers = "812695343321448459"
 	roles.Dota2 = "638824899259006996"
 	roles.Warframe = "712989643179556924"
 	roles.Terraria = "708622509003636828"

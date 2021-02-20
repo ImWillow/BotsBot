@@ -1,8 +1,12 @@
 package configuration
 
+import (
+	"github.com/bwmarrin/discordgo"
+)
+
 const (
 	// GamesList - list with games on discord server
-	GamesList = "LostArk,LeagueOfLegends,Valorant,Dota2,Warframe,Terraria"
+	GamesList = "LostArk,LeagueOfLegends,Valorant,Dota2,Warframe,Terraria,WorldOfWarcraft"
 
 	// AdminList - list with all administration IDs
 	AdminList = "264355075944611840,501043582656839682,221621445971804160,288022850093318146,215819877116674048"
@@ -22,6 +26,16 @@ type NewUserMessage struct {
 	Gender   string
 }
 
+// EmbedMessage - structure for send embed message
+type EmbedMessage struct {
+	Fields      []*discordgo.MessageEmbedField
+	Description string
+	Image       *discordgo.MessageEmbedImage
+	Provider    *discordgo.MessageEmbedProvider
+	Thumbnail   *discordgo.MessageEmbedThumbnail
+	Video       *discordgo.MessageEmbedVideo
+}
+
 // Roles - structure of roles from server
 type Roles struct {
 	Bots            string
@@ -33,6 +47,7 @@ type Roles struct {
 	LostArk         string
 	LeagueOfLegends string
 	Valorant        string
+	WoWers          string
 	Dota2           string
 	Warframe        string
 	Terraria        string

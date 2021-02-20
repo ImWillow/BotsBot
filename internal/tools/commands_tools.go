@@ -44,6 +44,9 @@ func GetRoles(gamelist string) (roles []string) {
 		case "Valorant":
 			roles = append(roles, configuration.ServerRoles.Valorant)
 
+		case "WoWers":
+			roles = append(roles, configuration.ServerRoles.WoWers)
+
 		case "Dota2":
 			roles = append(roles, configuration.ServerRoles.Dota2)
 
